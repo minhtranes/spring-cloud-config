@@ -1,17 +1,14 @@
 spring:
     cloud:
         config:
+            enabled: true
             uri: http://configservice:8888
-            enabled: false
-            
         stream:
             bindings:
                 springCloudBusInput:
                     binder: rabbit
-                    
                 springCloudBusOutput:
                     binder: rabbit
-                    
 eureka:
     environment: prod
     region: hcm
@@ -22,23 +19,20 @@ eureka:
         registerWithEureka: true
         fetchRegistry: false
         serviceUrl:
-                  defaultZone: http://discoveryservice:8761/eureka
+            defaultZone: http://discoveryservice:8761/eureka
         registryFetchIntervalSeconds: 5
         healthcheck:
             enabled: true
-            
-                 
 management:
-  endpoint:
-    jolokia:
-      enabled: true
-  endpoints:
-    shutdown:
-      enabled: true
-    security: false
-    web:
-      exposure:
-        include: "*"
-   
+    endpoint:
+        jolokia:
+            enabled: true
+    endpoints:
+        shutdown:
+            enabled: true
+        security: false
+        web:
+            exposure:
+                include: '*'
 endpoints:
-  sensitive: false
+    sensitive: false

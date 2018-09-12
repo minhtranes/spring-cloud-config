@@ -1,6 +1,7 @@
 server:
     port: 8888
     ssl:
+        enabled: false
         key-alias: sps
         key-password: Spsvn@123
         key-store-password: Spsvn@123
@@ -11,7 +12,7 @@ spring:
         config:
             server:
                 git:
-                    uri: https://git.spsvietnam.vn/Research_And_Development/config-repo.git
+                    uri: file://${user.home}/data/config-repo
                     searchPaths: '{application}'
                     ignoreLocalSshSettings: false
                     strictHostKeyChecking: false
@@ -20,25 +21,48 @@ spring:
                     clone-on-start: true
                     force-pull: true
                     basedir: ${user.home}/data/config-repo
-                    privateKey: "-----BEGIN RSA PRIVATE KEY-----\nMIIEoQIBAAKCAQEA5r6/zcAWTXp0/a/y5oTq77AofhoSYDU1mzZT8IYkDj7NZkch\nts6uhcCEx+VrqEInRr2jqoJa8qRNTKvk1y5bzHpxlrgiCNycDd2TCVdZIeWrjp4K\nHrSmnARrVp5REltGgy88oDeMBTk8i72t1GAvNUjqEgeSCsY+Gj/CqCXAQLtHHqGY\nLiTGIQ0h2J0iGIzJaKh0Q33waNIQolIwidTw7KP4LCMPn++uWsFWIyhDwmVVFWms\nRIKavCfBHluCPTUSmq2bg43+UA13XRyWzjoypXaDAnt8LmjdEhooQEo3MXJNUrK3\nOVygUiJk279YnOB8m02w8yNg26DSH1+G/afdSwIBJQKCAQAStYUsW67IAwKRHBqd\nEbIvHB71d7xM/WU2GSlmh2q1DALQ8QK7y5GcJF3LBMOKLuCXCHUN0zfOfAZEfKPa\nGIP70pOWmU7eH7mgQmXeKa1H8Ab9ucl4HHw2Kd8wiWCE8qTaNEMvlc0VLieA87Ql\n+fX9Zsbe3gTsHelcEwHx9TkaATFgZ5EyjXXp7e3Vaqc1+vtN0W3tOxWJU/IS66Vn\nDzsU7w3/SuzPtDPdFYmUlfNz57SQRSD78jjsg5Z/pg9/w/hKTf1uPtmiOWl/M1gJ\nTUm8r7wdrnLgy4VmB6g6St/wTgp47nHA9SMWw9/OElKlVH8ixoxVNV8bw8HfGRWF\nOsvVAoGBAPajMXt9gBX1lPdTxQWJ0wFnsigF6SOnUTHzZE+UAHXpqgltLsaJrFQV\nGnBnfWz/hayHgm4dvh4RPImR7/ZOzHjJpusrRPnFxY1SnRzVjnoKkf+VMAnGpabw\n+u7bhvCFxZSwi+uSvO8ixg7Cf/7EZdCy+QPSGhK69PJNZ6QrX4z/AoGBAO+BHXNB\nKVc7rF/nX2OfoldBNKslEW3OdYpwPj5UGKJWIEIdAuBp6i/0R++THBwtYKBFPVID\nbmlF6aIQwMzGok48miVd7IhkLn+UW5GF8oCDwnNUjpQ99R42wMlAfSdtP4zOqfta\n0FXBQeMrsrPhaIvmGT+wzGPKPYi9F9lnHdO1AoGBAJKmORj+g4KtsoU4ulZR8xWX\nmlz8mHYQdXeleeogplPyuCFH1p+QIUbAcJXcq3E9/HRsP7cYmo5rHROHNLv3gH8r\nywhe6r4G5CqEJhElCJuXlRSCOD0qAaGIXdohqi4mBscc3ZL9Tb6fDfrwMG34PInt\n4CvJCJWD65b9l5IL85/xAoGAYRirEwyUOB8cXjs0glV5KkreADGfSDEa5Ri/SbNj\n7sj4Uidv3nAgq6g41r8ZO9sLfz6qKCrnknZJ9ZgWz47MLY4wp11tusDUlJYXSNVw\nJkNA/lK2V8YXQ5moGjy9HdJYCKbPSjmSuvtSD/z1a4TlMcv8Ze26pP72Wgd4Xw4g\n2UkCgYBZMKvilHqdnYJ1IUk0fwyZCacsP1HS6CbQbju+zNVD+Qz7zveIRIy7Px7m\nqMbkQ9+dG/B6+iPeW9hfM1ujDQf732dTTz+W9EPHbZ2i5pIszfOKuw49xIs+XkTI\nWkgKj9S1yY49R4veZQky6KM0tOi4g/hyUwCZMeV90D9wDMMS2g==\n-----END RSA PRIVATE KEY-----"
+                    privateKey: |-
+                        -----BEGIN RSA PRIVATE KEY-----
+                        MIIEoQIBAAKCAQEA5r6/zcAWTXp0/a/y5oTq77AofhoSYDU1mzZT8IYkDj7NZkch
+                        ts6uhcCEx+VrqEInRr2jqoJa8qRNTKvk1y5bzHpxlrgiCNycDd2TCVdZIeWrjp4K
+                        HrSmnARrVp5REltGgy88oDeMBTk8i72t1GAvNUjqEgeSCsY+Gj/CqCXAQLtHHqGY
+                        LiTGIQ0h2J0iGIzJaKh0Q33waNIQolIwidTw7KP4LCMPn++uWsFWIyhDwmVVFWms
+                        RIKavCfBHluCPTUSmq2bg43+UA13XRyWzjoypXaDAnt8LmjdEhooQEo3MXJNUrK3
+                        OVygUiJk279YnOB8m02w8yNg26DSH1+G/afdSwIBJQKCAQAStYUsW67IAwKRHBqd
+                        EbIvHB71d7xM/WU2GSlmh2q1DALQ8QK7y5GcJF3LBMOKLuCXCHUN0zfOfAZEfKPa
+                        GIP70pOWmU7eH7mgQmXeKa1H8Ab9ucl4HHw2Kd8wiWCE8qTaNEMvlc0VLieA87Ql
+                        +fX9Zsbe3gTsHelcEwHx9TkaATFgZ5EyjXXp7e3Vaqc1+vtN0W3tOxWJU/IS66Vn
+                        DzsU7w3/SuzPtDPdFYmUlfNz57SQRSD78jjsg5Z/pg9/w/hKTf1uPtmiOWl/M1gJ
+                        TUm8r7wdrnLgy4VmB6g6St/wTgp47nHA9SMWw9/OElKlVH8ixoxVNV8bw8HfGRWF
+                        OsvVAoGBAPajMXt9gBX1lPdTxQWJ0wFnsigF6SOnUTHzZE+UAHXpqgltLsaJrFQV
+                        GnBnfWz/hayHgm4dvh4RPImR7/ZOzHjJpusrRPnFxY1SnRzVjnoKkf+VMAnGpabw
+                        +u7bhvCFxZSwi+uSvO8ixg7Cf/7EZdCy+QPSGhK69PJNZ6QrX4z/AoGBAO+BHXNB
+                        KVc7rF/nX2OfoldBNKslEW3OdYpwPj5UGKJWIEIdAuBp6i/0R++THBwtYKBFPVID
+                        bmlF6aIQwMzGok48miVd7IhkLn+UW5GF8oCDwnNUjpQ99R42wMlAfSdtP4zOqfta
+                        0FXBQeMrsrPhaIvmGT+wzGPKPYi9F9lnHdO1AoGBAJKmORj+g4KtsoU4ulZR8xWX
+                        mlz8mHYQdXeleeogplPyuCFH1p+QIUbAcJXcq3E9/HRsP7cYmo5rHROHNLv3gH8r
+                        ywhe6r4G5CqEJhElCJuXlRSCOD0qAaGIXdohqi4mBscc3ZL9Tb6fDfrwMG34PInt
+                        4CvJCJWD65b9l5IL85/xAoGAYRirEwyUOB8cXjs0glV5KkreADGfSDEa5Ri/SbNj
+                        7sj4Uidv3nAgq6g41r8ZO9sLfz6qKCrnknZJ9ZgWz47MLY4wp11tusDUlJYXSNVw
+                        JkNA/lK2V8YXQ5moGjy9HdJYCKbPSjmSuvtSD/z1a4TlMcv8Ze26pP72Wgd4Xw4g
+                        2UkCgYBZMKvilHqdnYJ1IUk0fwyZCacsP1HS6CbQbju+zNVD+Qz7zveIRIy7Px7m
+                        qMbkQ9+dG/B6+iPeW9hfM1ujDQf732dTTz+W9EPHbZ2i5pIszfOKuw49xIs+XkTI
+                        WkgKj9S1yY49R4veZQky6KM0tOi4g/hyUwCZMeV90D9wDMMS2g==
+                        -----END RSA PRIVATE KEY-----
                     username: sw_test_gitlab
                     password: 123456!Spsvn
         bus:
-            enabled: false
+            enabled: true
             trace:
                 enabled: false
         stream:
             bindings:
-                springCloudBusInput:
+                springCloudBus:
                     binder: rabbit
-                springCloudBusOutput:
-                    binder: rabbit
-        rabbitmq:
-            address: amqp://rabbitmq-dev:5672
-            host: rabbitmq-host
-            port: 5672
-            username: guest
-            password: guest
+    rabbitmq:
+        addresses: amqp://rabbitmq-dev:31274
+        username: guest
+        password: guest
 eureka:
     environment: prod
     region: hcm
@@ -65,4 +89,6 @@ management:
             exposure:
                 include: '*'
 endpoints:
+    restart:
+        enabled: true
     sensitive: false
