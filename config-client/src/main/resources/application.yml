@@ -1,0 +1,44 @@
+spring:
+    cloud:
+        config:
+            uri: http://configservice:8888
+            enabled: false
+            
+        stream:
+            bindings:
+                springCloudBusInput:
+                    binder: rabbit
+                    
+                springCloudBusOutput:
+                    binder: rabbit
+                    
+eureka:
+    environment: prod
+    region: hcm
+    instance:
+        prefer-ip-address: false
+    client:
+        enabled: false
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+                  defaultZone: http://discoveryservice:8761/eureka
+        registryFetchIntervalSeconds: 5
+        healthcheck:
+            enabled: true
+            
+                 
+management:
+  endpoint:
+    jolokia:
+      enabled: true
+  endpoints:
+    shutdown:
+      enabled: true
+    security: false
+    web:
+      exposure:
+        include: "*"
+   
+endpoints:
+  sensitive: false
