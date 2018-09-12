@@ -12,7 +12,7 @@ spring:
         config:
             server:
                 git:
-                    uri: file://${user.home}/data/config-repo
+                    uri: https://git.spsvietnam.vn/Research_And_Development/config-repo.git
                     searchPaths: '{application}'
                     ignoreLocalSshSettings: false
                     strictHostKeyChecking: false

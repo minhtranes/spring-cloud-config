@@ -1,3 +1,5 @@
+server:
+    port: 8080
 spring:
     cloud:
         config:
@@ -5,10 +7,12 @@ spring:
             uri: http://configservice:8888
         stream:
             bindings:
-                springCloudBusInput:
+                springCloudBus:
                     binder: rabbit
-                springCloudBusOutput:
-                    binder: rabbit
+    rabbitmq:
+        addresses: amqp://rabbitmq-dev:31274
+        username: guest
+        password: guest
 eureka:
     environment: prod
     region: hcm
@@ -35,4 +39,6 @@ management:
             exposure:
                 include: '*'
 endpoints:
+    restart:
+        enabled: true
     sensitive: false
