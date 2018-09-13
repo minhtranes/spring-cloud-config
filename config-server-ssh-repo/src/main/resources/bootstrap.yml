@@ -1,0 +1,6 @@
+spring:
+    application:
+        name: config-server
+jasypt:
+    encryptor:
+        password: Spsvn@234

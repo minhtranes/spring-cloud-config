@@ -16,44 +16,45 @@ spring:
         config:
             server:
                 git:
-                    uri: https://git.spsvietnam.vn/Research_And_Development/config-repo.git
+                    uri: git@git.spsvietnam.vn:Research_And_Development/config-repo.git
                     skipSslValidation: true
                     searchPaths: '{application}'
                     ignoreLocalSshSettings: true
                     strictHostKeyChecking: false
-                    host-key: Z2l0LnNwc3ZpZXRuYW0udm4=
+                    host-key: AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKGyq3I/rmrUrmB8yPFogHsrBK/2rN7+WrNJwbaYQgWiY/iK32RVnO7RwslBOEPoODOF8b4CmNUP+z1L0Mo41ik=
                     hostKeyAlgorithm: ssh-rsa
                     clone-on-start: true
                     force-pull: true
                     basedir: ${user.home}/data/config-repo
-                    privateKey: |-
-                        -----BEGIN RSA PRIVATE KEY-----
-                        MIIEoQIBAAKCAQEA5r6/zcAWTXp0/a/y5oTq77AofhoSYDU1mzZT8IYkDj7NZkch
-                        ts6uhcCEx+VrqEInRr2jqoJa8qRNTKvk1y5bzHpxlrgiCNycDd2TCVdZIeWrjp4K
-                        HrSmnARrVp5REltGgy88oDeMBTk8i72t1GAvNUjqEgeSCsY+Gj/CqCXAQLtHHqGY
-                        LiTGIQ0h2J0iGIzJaKh0Q33waNIQolIwidTw7KP4LCMPn++uWsFWIyhDwmVVFWms
-                        RIKavCfBHluCPTUSmq2bg43+UA13XRyWzjoypXaDAnt8LmjdEhooQEo3MXJNUrK3
-                        OVygUiJk279YnOB8m02w8yNg26DSH1+G/afdSwIBJQKCAQAStYUsW67IAwKRHBqd
-                        EbIvHB71d7xM/WU2GSlmh2q1DALQ8QK7y5GcJF3LBMOKLuCXCHUN0zfOfAZEfKPa
-                        GIP70pOWmU7eH7mgQmXeKa1H8Ab9ucl4HHw2Kd8wiWCE8qTaNEMvlc0VLieA87Ql
-                        +fX9Zsbe3gTsHelcEwHx9TkaATFgZ5EyjXXp7e3Vaqc1+vtN0W3tOxWJU/IS66Vn
-                        DzsU7w3/SuzPtDPdFYmUlfNz57SQRSD78jjsg5Z/pg9/w/hKTf1uPtmiOWl/M1gJ
-                        TUm8r7wdrnLgy4VmB6g6St/wTgp47nHA9SMWw9/OElKlVH8ixoxVNV8bw8HfGRWF
-                        OsvVAoGBAPajMXt9gBX1lPdTxQWJ0wFnsigF6SOnUTHzZE+UAHXpqgltLsaJrFQV
-                        GnBnfWz/hayHgm4dvh4RPImR7/ZOzHjJpusrRPnFxY1SnRzVjnoKkf+VMAnGpabw
-                        +u7bhvCFxZSwi+uSvO8ixg7Cf/7EZdCy+QPSGhK69PJNZ6QrX4z/AoGBAO+BHXNB
-                        KVc7rF/nX2OfoldBNKslEW3OdYpwPj5UGKJWIEIdAuBp6i/0R++THBwtYKBFPVID
-                        bmlF6aIQwMzGok48miVd7IhkLn+UW5GF8oCDwnNUjpQ99R42wMlAfSdtP4zOqfta
-                        0FXBQeMrsrPhaIvmGT+wzGPKPYi9F9lnHdO1AoGBAJKmORj+g4KtsoU4ulZR8xWX
-                        mlz8mHYQdXeleeogplPyuCFH1p+QIUbAcJXcq3E9/HRsP7cYmo5rHROHNLv3gH8r
-                        ywhe6r4G5CqEJhElCJuXlRSCOD0qAaGIXdohqi4mBscc3ZL9Tb6fDfrwMG34PInt
-                        4CvJCJWD65b9l5IL85/xAoGAYRirEwyUOB8cXjs0glV5KkreADGfSDEa5Ri/SbNj
-                        7sj4Uidv3nAgq6g41r8ZO9sLfz6qKCrnknZJ9ZgWz47MLY4wp11tusDUlJYXSNVw
-                        JkNA/lK2V8YXQ5moGjy9HdJYCKbPSjmSuvtSD/z1a4TlMcv8Ze26pP72Wgd4Xw4g
-                        2UkCgYBZMKvilHqdnYJ1IUk0fwyZCacsP1HS6CbQbju+zNVD+Qz7zveIRIy7Px7m
-                        qMbkQ9+dG/B6+iPeW9hfM1ujDQf732dTTz+W9EPHbZ2i5pIszfOKuw49xIs+XkTI
-                        WkgKj9S1yY49R4veZQky6KM0tOi4g/hyUwCZMeV90D9wDMMS2g==
-                        -----END RSA PRIVATE KEY-----
+                    knownHostsFile: /opt/app/config-server-build-directory/config/known_hosts
+                    privateKey: |
+                                    -----BEGIN RSA PRIVATE KEY-----
+                                    MIIEoQIBAAKCAQEAqVJhFzMZ1P+NnKBFBkOZa89qhNOVSyKazYaSFJc64LoEW/CD
+                                    pYBg2lVUL49njjq5RKqTiRhE4yWyqqafpbKLaRDejoY65roteGB9ilH059oUen9W
+                                    pDrhc9O0BqL9sfUptMI1Enhzo/kZLc1VKmU72croohTe6Rhlh5LjrACql2CLUm9k
+                                    pXzih1CH5UE2c7AiabkMbyAOsPp0Z/TZekXSvoIratxDtCKanNroIUTs+K51+eC6
+                                    Gx0eZ+UqPjMyRzBv7N+zW2NC+CNG2365W56c9afuYE9P9QYxACo6yt5BLB4EjeQN
+                                    zqicHXh6Irc1JLVsQhFRyCWNj/UmLgOy6eU6ZQIBJQKCAQBAEVUrX3GO3TyAc/5x
+                                    EqjBAl+n4VsVgrcdVYNhvK5+i5LyWwFhN36XzUJy3FCyW2iyMrRdYyD8AG0d+duK
+                                    ze+PiderjLxXTV1QJIKHXUfpBmidDZZnp5OTnDZHs0s8apoouC/BzLYiXkDg5ejf
+                                    m+0h+b/OoBz+QJUeiptV1r0Wrkf/AwtBGJSIOrDaduBE3YuE1avL/OKC3D5Dc5qZ
+                                    yzyML9oXmCamLIUt7SNbGOg0/2K9aL74LNoYCCHkQmjP+gwVFvXs0ON6AaOIXYbI
+                                    AK02wPsLnX7J/sZBkf+/0JV0xRbBv2dyE2UIbEXpzTHp/PFPK49v/3jxwk3dhSOk
+                                    T3I1AoGBAP1y92iavzuUMjHDTSoSOcxQ1i3FIyHj/RpPwW4B11c1vJaskcGeN2oF
+                                    cVjUiI6S7vHgJeuGj5hTQ7WcgQJC67NB0KabXszXvlABtfCKwHrKm5AqR1TcCe6m
+                                    a4x5PvBcQE7Mctzbl8Z8MaXyELcN6OskJdDct16LswHMLahNCvDrAoGBAKsGpswD
+                                    RdVB8PBy3nKG466C9098l3GXt0fTpnd0QxJfa6/JE9LMdYd5dtZuQ6+QikhJuEOW
+                                    8mpC1RsPlPZw5sFOwBUXShzwPA/M0Zt3JXz1xTRywywDJBHRBfgf03yti7B4QHr8
+                                    b9zmcdJGvwx1i3EV0876SwGp5TIGGr6zvy3vAoGAS1mH0v2SzIYBFbaaZnQfBWQj
+                                    /8T8m190wqIW6Vp+SlwVeOcyQHslOzIM8OU9WtG8qMYZHIHzVsylbVgKraUxUPfk
+                                    FdsqBYw/f5HOTm5wkzVQ19U3zR7ShThlKcMuYyJYTscpETpdjgk/MVXNnjSRWqnh
+                                    uqJ7tFMLtG0iVKFIcSMCgYEAhgwh3iwUI7A5YoOLwYxRlp4AG7SuDOyIu8GQT8nT
+                                    tHRNe/Cg1acrr18zoSX9sx5C3rZSJyNIYR+gHCD4NscxZxQ1r6p4W97i96CInHIk
+                                    TS9VYHWf5DnQKaPUPwQwI3ND+QRONuGIG9c2neRsOjKduX/PhozTAU3PULitLa96
+                                    KusCgYAtIHsoZ6Y5at1jtOICyhCnjxdBrvb60XJyqyG7uNLZERaRveNDE9axpNPV
+                                    ffhdWXxdDuXqpFi+Ci0jWxC/aWar4g9fWH3AITNM2t2HBDpEzfjICZx7GKqFeTEk
+                                    Rg3zqTBX6uSyR7JVwqZI04TOK3wWpRdCt67kjuWGnTclSS0ayg==
+                                    -----END RSA PRIVATE KEY-----
                     username: sw_test_gitlab
                     password: ENC(07b8RBlZEtbdwVMjUBnlyeFPWBIfoVBl)
         bus:
@@ -65,7 +66,7 @@ spring:
                 springCloudBus:
                     binder: rabbit
     rabbitmq:
-        addresses: amqp://rabbitmq-dev:31274
+        addresses: amqp://rabbitmq-dev:5672
         username: guest
         password: guest
 eureka:

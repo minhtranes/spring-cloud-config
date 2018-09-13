@@ -2,15 +2,12 @@ server:
     port: 8080
 spring:
     cloud:
-        config:
-            enabled: true
-            uri: http://configservice:8888
         stream:
             bindings:
                 springCloudBus:
                     binder: rabbit
     rabbitmq:
-        addresses: amqp://rabbitmq-dev:31274
+        addresses: amqp://rabbitmq-dev:5672
         username: guest
         password: guest
 eureka:

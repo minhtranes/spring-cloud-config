@@ -1,0 +1,97 @@
+server:
+    port: 8888
+    ssl:
+        enabled: false
+        key-alias: sps
+        key-password: Spsvn@123
+        key-store-password: Spsvn@123
+        key-store: classpath:config/keystore.jks
+        key-store-type: PKCS12
+        trust-store: classpath:config/keystore.jks
+        trust-store-password: Spsvn@123
+        trust-store-provider: EITHER
+        trust-store-type: PKCS12
+spring:
+    cloud:
+        config:
+            server:
+                git:
+                    uri: git@git.spsvietnam.vn:Research_And_Development/config-repo.git
+                    skipSslValidation: true
+                    searchPaths: '{application}'
+                    ignoreLocalSshSettings: true
+                    strictHostKeyChecking: false
+                    host-key: AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKGyq3I/rmrUrmB8yPFogHsrBK/2rN7+WrNJwbaYQgWiY/iK32RVnO7RwslBOEPoODOF8b4CmNUP+z1L0Mo41ik=
+                    hostKeyAlgorithm: ssh-rsa
+                    clone-on-start: true
+                    force-pull: true
+                    basedir: ${user.home}/data/config-repo
+                    privateKey: |
+                        -----BEGIN RSA PRIVATE KEY-----
+                        MIIEoQIBAAKCAQEAqVJhFzMZ1P+NnKBFBkOZa89qhNOVSyKazYaSFJc64LoEW/CD
+                        pYBg2lVUL49njjq5RKqTiRhE4yWyqqafpbKLaRDejoY65roteGB9ilH059oUen9W
+                        pDrhc9O0BqL9sfUptMI1Enhzo/kZLc1VKmU72croohTe6Rhlh5LjrACql2CLUm9k
+                        pXzih1CH5UE2c7AiabkMbyAOsPp0Z/TZekXSvoIratxDtCKanNroIUTs+K51+eC6
+                        Gx0eZ+UqPjMyRzBv7N+zW2NC+CNG2365W56c9afuYE9P9QYxACo6yt5BLB4EjeQN
+                        zqicHXh6Irc1JLVsQhFRyCWNj/UmLgOy6eU6ZQIBJQKCAQBAEVUrX3GO3TyAc/5x
+                        EqjBAl+n4VsVgrcdVYNhvK5+i5LyWwFhN36XzUJy3FCyW2iyMrRdYyD8AG0d+duK
+                        ze+PiderjLxXTV1QJIKHXUfpBmidDZZnp5OTnDZHs0s8apoouC/BzLYiXkDg5ejf
+                        m+0h+b/OoBz+QJUeiptV1r0Wrkf/AwtBGJSIOrDaduBE3YuE1avL/OKC3D5Dc5qZ
+                        yzyML9oXmCamLIUt7SNbGOg0/2K9aL74LNoYCCHkQmjP+gwVFvXs0ON6AaOIXYbI
+                        AK02wPsLnX7J/sZBkf+/0JV0xRbBv2dyE2UIbEXpzTHp/PFPK49v/3jxwk3dhSOk
+                        T3I1AoGBAP1y92iavzuUMjHDTSoSOcxQ1i3FIyHj/RpPwW4B11c1vJaskcGeN2oF
+                        cVjUiI6S7vHgJeuGj5hTQ7WcgQJC67NB0KabXszXvlABtfCKwHrKm5AqR1TcCe6m
+                        a4x5PvBcQE7Mctzbl8Z8MaXyELcN6OskJdDct16LswHMLahNCvDrAoGBAKsGpswD
+                        RdVB8PBy3nKG466C9098l3GXt0fTpnd0QxJfa6/JE9LMdYd5dtZuQ6+QikhJuEOW
+                        8mpC1RsPlPZw5sFOwBUXShzwPA/M0Zt3JXz1xTRywywDJBHRBfgf03yti7B4QHr8
+                        b9zmcdJGvwx1i3EV0876SwGp5TIGGr6zvy3vAoGAS1mH0v2SzIYBFbaaZnQfBWQj
+                        /8T8m190wqIW6Vp+SlwVeOcyQHslOzIM8OU9WtG8qMYZHIHzVsylbVgKraUxUPfk
+                        FdsqBYw/f5HOTm5wkzVQ19U3zR7ShThlKcMuYyJYTscpETpdjgk/MVXNnjSRWqnh
+                        uqJ7tFMLtG0iVKFIcSMCgYEAhgwh3iwUI7A5YoOLwYxRlp4AG7SuDOyIu8GQT8nT
+                        tHRNe/Cg1acrr18zoSX9sx5C3rZSJyNIYR+gHCD4NscxZxQ1r6p4W97i96CInHIk
+                        TS9VYHWf5DnQKaPUPwQwI3ND+QRONuGIG9c2neRsOjKduX/PhozTAU3PULitLa96
+                        KusCgYAtIHsoZ6Y5at1jtOICyhCnjxdBrvb60XJyqyG7uNLZERaRveNDE9axpNPV
+                        ffhdWXxdDuXqpFi+Ci0jWxC/aWar4g9fWH3AITNM2t2HBDpEzfjICZx7GKqFeTEk
+                        Rg3zqTBX6uSyR7JVwqZI04TOK3wWpRdCt67kjuWGnTclSS0ayg==
+                        -----END RSA PRIVATE KEY-----
+        bus:
+            enabled: true
+            trace:
+                enabled: false
+        stream:
+            bindings:
+                springCloudBus:
+                    binder: rabbit
+    rabbitmq:
+        addresses: amqp://rabbitmq-dev:5672
+        username: guest
+        password: guest
+eureka:
+    environment: prod
+    region: hcm
+    instance:
+        prefer-ip-address: false
+    client:
+        enabled: false
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://discoveryservice:8761/eureka
+        registryFetchIntervalSeconds: 5
+        healthcheck:
+            enabled: true
+management:
+    endpoint:
+        jolokia:
+            enabled: true
+    endpoints:
+        shutdown:
+            enabled: true
+        security: false
+        web:
+            exposure:
+                include: '*'
+endpoints:
+    restart:
+        enabled: true
+    sensitive: false

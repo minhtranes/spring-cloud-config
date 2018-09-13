@@ -1,5 +1,9 @@
 spring:
     application:
         name: config-client
+    cloud:
+        config:
+            enabled: true
+            uri: http://configservice:8888
     profiles:
         active: default
