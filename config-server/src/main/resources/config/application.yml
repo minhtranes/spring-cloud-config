@@ -7,14 +7,19 @@ server:
         key-store-password: Spsvn@123
         key-store: classpath:config/keystore.jks
         key-store-type: PKCS12
+        trust-store: classpath:config/keystore.jks
+        trust-store-password: Spsvn@123
+        trust-store-provider: EITHER
+        trust-store-type: PKCS12
 spring:
     cloud:
         config:
             server:
                 git:
                     uri: https://git.spsvietnam.vn/Research_And_Development/config-repo.git
+                    skipSslValidation: true
                     searchPaths: '{application}'
-                    ignoreLocalSshSettings: false
+                    ignoreLocalSshSettings: true
                     strictHostKeyChecking: false
                     host-key: Z2l0LnNwc3ZpZXRuYW0udm4=
                     hostKeyAlgorithm: ssh-rsa
@@ -50,7 +55,7 @@ spring:
                         WkgKj9S1yY49R4veZQky6KM0tOi4g/hyUwCZMeV90D9wDMMS2g==
                         -----END RSA PRIVATE KEY-----
                     username: sw_test_gitlab
-                    password: 123456!Spsvn
+                    password: ENC(07b8RBlZEtbdwVMjUBnlyeFPWBIfoVBl)
         bus:
             enabled: true
             trace:
