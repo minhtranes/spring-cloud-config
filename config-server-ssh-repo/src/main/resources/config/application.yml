@@ -1,16 +1,3 @@
-server:
-    port: 8888
-    ssl:
-        enabled: false
-        key-alias: sps
-        key-password: Spsvn@123
-        key-store-password: Spsvn@123
-        key-store: classpath:config/keystore.jks
-        key-store-type: PKCS12
-        trust-store: classpath:config/keystore.jks
-        trust-store-password: Spsvn@123
-        trust-store-provider: EITHER
-        trust-store-type: PKCS12
 spring:
     cloud:
         config:
@@ -66,20 +53,6 @@ spring:
         addresses: amqp://rabbitmq-dev:5672
         username: guest
         password: guest
-eureka:
-    environment: prod
-    region: hcm
-    instance:
-        prefer-ip-address: false
-    client:
-        enabled: false
-        registerWithEureka: true
-        fetchRegistry: false
-        serviceUrl:
-            defaultZone: http://discoveryservice:8761/eureka
-        registryFetchIntervalSeconds: 5
-        healthcheck:
-            enabled: true
 management:
     endpoint:
         jolokia:
