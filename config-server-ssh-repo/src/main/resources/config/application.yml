@@ -53,6 +53,20 @@ spring:
         addresses: amqp://rabbitmq-dev:5672
         username: guest
         password: guest
+eureka:
+    environment: prod
+    region: hcm
+    instance:
+        prefer-ip-address: false
+    client:
+        enabled: false
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://discoveryservice:8761/eureka
+        registryFetchIntervalSeconds: 5
+        healthcheck:
+            enabled: true
 management:
     endpoint:
         jolokia:
