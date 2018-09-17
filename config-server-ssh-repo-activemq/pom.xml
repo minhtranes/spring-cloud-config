@@ -4,9 +4,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>config-server-ssl-repo-activemq</artifactId>
+    <artifactId>config-server-ssh-repo-activemq</artifactId>
     <packaging>jar</packaging>
-    <name>config-server-ssl-repo-activemq</name>
+    <name>config-server-ssh-repo-activemq</name>
 
     <parent>
         <groupId>vn.sps.study</groupId>
@@ -23,6 +23,11 @@
     </properties>
 
     <dependencies>
+    <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>5.14.5</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-monitor</artifactId>

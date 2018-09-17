@@ -4,7 +4,9 @@ spring:
     cloud:
         stream:
             bindings:
-                springCloudBus:
+                springCloudBusInput:
+                    binder: activemq
+                springCloudBusOutput:
                     binder: activemq
     activemq:
         broker-url: tcp://activemq-dev:61616
