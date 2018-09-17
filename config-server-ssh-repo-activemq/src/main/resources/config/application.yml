@@ -49,10 +49,8 @@ spring:
             bindings:
                 springCloudBusInput:
                     binder: activemq
-#                    destination: config-cloud-bus-input
                 springCloudBusOutput:
                     binder: activemq
-#                    destination: config-cloud-bus-output
     activemq:
         broker-url: tcp://activemq-dev:61616
         in-memory: false

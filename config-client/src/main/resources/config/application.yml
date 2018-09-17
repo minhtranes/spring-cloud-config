@@ -8,6 +8,10 @@ spring:
                     binder: activemq
                 springCloudBusOutput:
                     binder: activemq
+        bus:
+            enabled: true
+            trace:
+                enabled: false
     activemq:
         broker-url: tcp://activemq-dev:61616
         in-memory: false
