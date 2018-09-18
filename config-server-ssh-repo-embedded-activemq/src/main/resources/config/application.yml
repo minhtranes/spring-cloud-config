@@ -52,8 +52,9 @@ spring:
                 springCloudBusOutput:
                     binder: activemq
     activemq:
-        broker-url: tcp://activemq-dev:61616
-        in-memory: false
+        broker-url: vm://embedded?broker.persistent=false,useShutdownHook=false
+        in-memory: true
+        non-blocking-redelivery: true
         user: admin
         password: admin
     rabbitmq:

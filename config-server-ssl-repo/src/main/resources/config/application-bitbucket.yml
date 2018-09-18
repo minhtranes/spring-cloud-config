@@ -4,7 +4,8 @@ spring:
             server:
                 git:
                     uri: https://minhht@bitbucket.org/minhht/app-config.git
-                    skipSslValidation: true
+                    label: dev-local
+                    skipSslValidation: false
                     searchPaths: '{application}'
                     ignoreLocalSshSettings: true
                     strictHostKeyChecking: false
