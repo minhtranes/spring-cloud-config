@@ -28,6 +28,7 @@
             <directory>${project.basedir}/src/main/resources</directory>
             <outputDirectory>/</outputDirectory>
             <includes>
+                <include>*.bat</include>
                 <include>*.sh</include>
                 <include>/config/**/*</include>
             </includes>
