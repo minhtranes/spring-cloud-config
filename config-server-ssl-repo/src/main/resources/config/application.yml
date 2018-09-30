@@ -11,6 +11,7 @@ spring:
                 maxInterval: 900000
                 maxAttempts: 6
             server:
+                bootrap: true
                 git:
                     uri: https://git.spsvietnam.vn/CDIPP_Lite/configuration-repository.git
                     label: dev-local
@@ -29,12 +30,18 @@ spring:
                 enabled: false
         stream:
             bindings:
-                springCloudBus:
-                    binder: rabbit
-    rabbitmq:
-        addresses: amqp://rabbitmq-dev:5672
-        username: guest
-        password: guest
+                springCloudBusInput:
+                    binder: activemq
+                    group: business
+                    destination: spring-cloud-bus
+                springCloudBusOutput:
+                    binder: activemq
+                    group: business
+                    destination: spring-cloud-bus
+    activemq:
+        broker-url: tcp://activemq-dev:61616
+        user: admin
+        password: admin
 eureka:
     environment: prod
     region: hcm
