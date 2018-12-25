@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
 public class TestConfiguration {
 
     @Bean
-    @ConfigurationProperties(prefix="adasd")
+    @ConfigurationProperties(prefix="test")
     TestProperties testProperties() {
         return new TestProperties();
     }
