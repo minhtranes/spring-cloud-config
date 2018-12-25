@@ -22,6 +22,7 @@
 		<spring-cloud.version>Edgware.SR4</spring-cloud.version>
 		<jasypt.version>2.0.0</jasypt.version>
         <logstash-logback-encoder.version>4.11</logstash-logback-encoder.version>
+        <spring-cloud-stream-binder-jms-activemq.version>1.0.0.0</spring-cloud-stream-binder-jms-activemq.version>
 	</properties>
 
 	<dependencies>
@@ -61,7 +62,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+		<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-jms-activemq</artifactId>
+            <version>${spring-cloud-stream-binder-jms-activemq.version}</version>
+        </dependency>
 	</dependencies>
 
 	<dependencyManagement>

@@ -6,8 +6,12 @@ spring:
             bindings:
                 springCloudBusInput:
                     binder: activemq
+                    group: ${spring.application.name}
+                    destination: spring-cloud-bus
                 springCloudBusOutput:
                     binder: activemq
+                    group: ${spring.application.name}
+                    destination: spring-cloud-bus
         bus:
             enabled: true
             trace:
