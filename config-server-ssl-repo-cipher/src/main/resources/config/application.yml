@@ -1,0 +1,51 @@
+server:
+    port: 8888
+spring:
+    cloud:
+        bus:
+            enabled: false
+            trace:
+                enabled: false
+        stream:
+            bindings:
+                springCloudBusInput:
+                    binder: rabbit
+                    group: ${spring.application.name}
+                    destination: spring-cloud-bus
+                springCloudBusOutput:
+                    binder: rabbit
+                    group: ${spring.application.name}
+                    destination: spring-cloud-bus
+    activemq:
+        broker-url: tcp://activemq-dev:61616
+        user: admin
+        password: admin
+eureka:
+    environment: prod
+    region: hcm
+    instance:
+        prefer-ip-address: false
+    client:
+        enabled: false
+        registerWithEureka: true
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://discoveryservice:8761/eureka
+        registryFetchIntervalSeconds: 5
+        healthcheck:
+            enabled: true
+management:
+    endpoint:
+        jolokia:
+            enabled: true
+    endpoints:
+        shutdown:
+            enabled: true
+        security: false
+        web:
+            exposure:
+                include: '*'
+endpoints:
+    restart:
+        enabled: true
+    sensitive: false

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<!-- <appender name="TCP" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<destination>10.10.15.192:4560</destination>
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder">
+			<includeCallerInfo>true</includeCallerInfo>
+			<customFields>{"index":"dds-core-test"}
+			</customFields>
+		</encoder>
+	</appender> -->
+	<!-- <root level="INFO">
+		<appender-ref ref="TCP" />
+	</root> -->
+</configuration>

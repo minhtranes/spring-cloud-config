@@ -1,0 +1,29 @@
+spring:
+    application:
+        name: config-server
+    cloud:
+        config:
+            name: configservice
+            profile: default
+            label: dev-local
+            retry:
+                initialInterval: 100000
+                multiplier: 1.1
+                maxInterval: 900000
+                maxAttempts: 6
+            server:
+                bootstrap: true
+                git:
+                    uri: https://git.spsvietnam.vn/Research_And_Development/config-repo.git
+                    search-paths: '*'
+                    skipSslValidation: false
+                    ignoreLocalSshSettings: true
+                    strictHostKeyChecking: false
+                    clone-on-start: true
+                    force-pull: true
+                    basedir: ${user.home}/data/config-repo
+                    username: sw_test_gitlab
+                    password: ENC(07b8RBlZEtbdwVMjUBnlyeFPWBIfoVBl)
+jasypt:
+    encryptor:
+        password: Spsvn@234
